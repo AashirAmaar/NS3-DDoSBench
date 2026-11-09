@@ -55,3 +55,12 @@ sha256sum -c SHA256SUMS
 `run_benchmark.py <config> --out <dir> --list` prints every scenario and its arguments without running it.
 Scenarios with 2000-3000 attackers take up to about an hour each. Rebuilding the released files from the
 per-scenario CSVs with these scripts reproduces them byte for byte (checked 2026-11-09).
+
+## License and citation
+- **Code** (`generator/`): MIT License, see [`LICENSE`](LICENSE).
+- **Data** (`NS3-DDoSBench_dataset.csv`, `Hard_UDP_Background_Extension_Dataset.tar.gz` and the files built from
+  them): Creative Commons Attribution 4.0 International (CC BY 4.0), see [`LICENSE-DATA`](LICENSE-DATA).
+  You may use, share and adapt the data for any purpose, provided you give appropriate credit.
+
+If you use NS3-DDoSBench, please cite the accompanying paper (reference to be added on publication) and this
+repository: https://github.com/AashirAmaar/NS3-DDoSBench
