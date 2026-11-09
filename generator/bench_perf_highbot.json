@@ -1,0 +1,46 @@
+{
+ "pipeline": "bench",
+ "name": "ns3ddosbench_perf_highbot",
+ "note": "Released dataset, part 2: 2000-3000 attackers (216 scenarios)",
+ "program": "hybrid_performance_attack",
+ "scenario": "perfhighbot_tcp{nTcp}_att{nAttackers}_type{attackType}_rate{attackRate}_pkt{packetSize}_dur{attackDuration}_seed{seed}",
+ "grid": {
+  "nTcp": [
+   5
+  ],
+  "nAttackers": [
+   2000,
+   3000
+  ],
+  "attackType": [
+   "constant",
+   "bursty",
+   "mixed"
+  ],
+  "attackRate": [
+   "500Kbps",
+   "1Mbps",
+   "2Mbps"
+  ],
+  "packetSize": [
+   64,
+   512,
+   1024
+  ],
+  "attackDuration": [
+   "short",
+   "long"
+  ],
+  "seed": [
+   1,
+   2
+  ]
+ },
+ "fixed": {
+  "randomAttackStart": "true",
+  "bottleneckRate": "50Mbps",
+  "linkDelay": "10ms"
+ },
+ "jobs": 8,
+ "all_name": "performance_highbot_overnight_benchmark_all"
+}

@@ -1,0 +1,53 @@
+{
+ "pipeline": "bench",
+ "name": "ns3ddosbench_hard_udp",
+ "note": "Hard-scenario extension S3: many benign UDP nodes, few attackers (648 scenarios)",
+ "program": "hybrid_performance_attack",
+ "scenario": "hardudp_udp{nUdpNormal}_tcp{nTcp}_att{nAttackers}_type{attackType}_rate{attackRate}_pkt{packetSize}_dur{attackDuration}_seed{seed}",
+ "grid": {
+  "nUdpNormal": [
+   10,
+   30,
+   50
+  ],
+  "nTcp": [
+   5,
+   20
+  ],
+  "nAttackers": [
+   10,
+   30,
+   50
+  ],
+  "attackType": [
+   "constant",
+   "bursty",
+   "mixed"
+  ],
+  "attackRate": [
+   "500Kbps"
+  ],
+  "packetSize": [
+   64,
+   512,
+   1024
+  ],
+  "attackDuration": [
+   "short",
+   "long"
+  ],
+  "seed": [
+   1,
+   2
+  ]
+ },
+ "fixed": {
+  "randomAttackStart": "true",
+  "bottleneckRate": "50Mbps",
+  "linkDelay": "10ms",
+  "dedicatedUdpNodes": "true"
+ },
+ "jobs": 8,
+ "all_name": "hard_udp_background_extension_dataset",
+ "release_source": "hard_udp_background_extension"
+}
